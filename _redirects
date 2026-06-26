@@ -1,0 +1,18 @@
+# مسارات الواجهة الخلفية (Netlify Functions) — يجب أن تسبق توجيه SPA
+/api/otp/send    /.netlify/functions/otp-send    200
+/api/otp/verify  /.netlify/functions/otp-verify  200
+/api/otp/notify  /.netlify/functions/otp-notify  200
+
+# توجيه النطاقات الفرعية إلى النطاق الرسمي (تحسين SEO)
+https://delta-stars.netlify.app/* https://deltastars.store/:splat 301!
+https://delta--stars.netlify.app/* https://deltastars.store/:splat 301!
+https://deltastars.netlify.app/* https://deltastars.store/:splat 301!
+
+# توجيه www إلى النطاق الرئيسي
+https://www.deltastars.store/* https://deltastars.store/:splat 301!
+
+# توجيه HTTP إلى HTTPS
+http://deltastars.store/* https://deltastars.store/:splat 301!
+
+# معالجة تطبيق React SPA - منع أخطاء 404
+/* /index.html 200
